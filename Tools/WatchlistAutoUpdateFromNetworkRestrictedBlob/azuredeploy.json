@@ -1,0 +1,120 @@
+{
+  "$schema": "https://schema.management.azure.com/schemas/2019-04-01/deploymentTemplate.json#",
+  "contentVersion": "1.0.0.0",
+  "metadata": {
+    "_generator": {
+      "name": "bicep",
+      "version": "0.36.177.2456",
+      "templateHash": "5535549245259160294"
+    }
+  },
+  "parameters": {
+    "azureWebJobsStorage": {
+      "type": "string"
+    },
+    "watchlistName": {
+      "type": "string",
+      "defaultValue": "example-watchlist"
+    },
+    "azureSubscriptionId": {
+      "type": "string",
+      "defaultValue": "00000000-0000-0000-0000-000000000000"
+    },
+    "resourceGroupName": {
+      "type": "string",
+      "defaultValue": "example-resource-group"
+    },
+    "workspaceName": {
+      "type": "string",
+      "defaultValue": "example-workspace"
+    },
+    "fileName": {
+      "type": "string",
+      "defaultValue": "example-file.csv"
+    },
+    "storageAccountName": {
+      "type": "string",
+      "defaultValue": "examplestorageaccount"
+    },
+    "storageContainerName": {
+      "type": "string",
+      "defaultValue": "example-container"
+    },
+    "watchlistProvider": {
+      "type": "string",
+      "defaultValue": "example-provider"
+    },
+    "watchlistSearchKey": {
+      "type": "string",
+      "defaultValue": "example-search-key"
+    },
+    "watchlistDescription": {
+      "type": "string",
+      "defaultValue": "example-description"
+    }
+  },
+  "resources": [
+    {
+      "type": "Microsoft.Web/sites",
+      "apiVersion": "2022-03-01",
+      "name": "[format('{0}-function', parameters('watchlistName'))]",
+      "location": "[resourceGroup().location]",
+      "kind": "functionapp",
+      "properties": {
+        "serverFarmId": "[resourceId('Microsoft.Web/serverfarms', format('{0}-plan', parameters('watchlistName')))]",
+        "siteConfig": {
+          "appSettings": [
+            {
+              "name": "AzureWebJobsStorage",
+              "value": "[parameters('azureWebJobsStorage')]"
+            },
+            {
+              "name": "FUNCTIONS_WORKER_RUNTIME",
+              "value": "python"
+            },
+            {
+              "name": "WATCHLIST_NAME",
+              "value": "[parameters('watchlistName')]"
+            },
+            {
+              "name": "AZURE_SUBSCRIPTION_ID",
+              "value": "[parameters('azureSubscriptionId')]"
+            },
+            {
+              "name": "RESOURCE_GROUP_NAME",
+              "value": "[parameters('resourceGroupName')]"
+            },
+            {
+              "name": "WORKSPACE_NAME",
+              "value": "[parameters('workspaceName')]"
+            },
+            {
+              "name": "FILE_NAME",
+              "value": "[parameters('fileName')]"
+            },
+            {
+              "name": "STORAGE_ACCOUNT_NAME",
+              "value": "[parameters('storageAccountName')]"
+            },
+            {
+              "name": "STORAGE_CONTAINER_NAME",
+              "value": "[parameters('storageContainerName')]"
+            },
+            {
+              "name": "WATCHLIST_PROVIDER",
+              "value": "[parameters('watchlistProvider')]"
+            },
+            {
+              "name": "WATCHLIST_SEARCH_KEY",
+              "value": "[parameters('watchlistSearchKey')]"
+            },
+            {
+              "name": "WATCHLIST_DESCRIPTION",
+              "value": "[parameters('watchlistDescription')]"
+            }
+          ]
+        }
+      }
+    }
+  ]
+}
