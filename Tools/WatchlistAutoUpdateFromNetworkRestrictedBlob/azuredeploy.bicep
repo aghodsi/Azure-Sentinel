@@ -1,4 +1,3 @@
-param azureWebJobsStorage string
 param watchlistName string = 'example-watchlist'
 param azureSubscriptionId string = '00000000-0000-0000-0000-000000000000'
 param resourceGroupName string = 'example-resource-group'
@@ -18,10 +17,6 @@ resource functionApp 'Microsoft.Web/sites@2022-03-01' = {
     serverFarmId: resourceId('Microsoft.Web/serverfarms', '${watchlistName}-plan')
     siteConfig: {
       appSettings: [
-        {
-          name: 'AzureWebJobsStorage'
-          value: azureWebJobsStorage
-        }
         {
           name: 'FUNCTIONS_WORKER_RUNTIME'
           value: 'python'

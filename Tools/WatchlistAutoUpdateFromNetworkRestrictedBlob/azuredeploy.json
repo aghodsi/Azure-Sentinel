@@ -9,9 +9,6 @@
     }
   },
   "parameters": {
-    "azureWebJobsStorage": {
-      "type": "string"
-    },
     "watchlistName": {
       "type": "string",
       "defaultValue": "example-watchlist"
@@ -64,10 +61,6 @@
         "serverFarmId": "[resourceId('Microsoft.Web/serverfarms', format('{0}-plan', parameters('watchlistName')))]",
         "siteConfig": {
           "appSettings": [
-            {
-              "name": "AzureWebJobsStorage",
-              "value": "[parameters('azureWebJobsStorage')]"
-            },
             {
               "name": "FUNCTIONS_WORKER_RUNTIME",
               "value": "python"
