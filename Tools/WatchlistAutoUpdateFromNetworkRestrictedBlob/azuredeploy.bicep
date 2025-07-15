@@ -19,10 +19,6 @@ resource functionApp 'Microsoft.Web/sites@2022-03-01' = {
     siteConfig: {
       appSettings: [
         {
-          name: 'AzureWebJobsStorage'
-          value: azureWebJobsStorage
-        }
-        {
           name: 'FUNCTIONS_WORKER_RUNTIME'
           value: 'python'
         }
