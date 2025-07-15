@@ -1,5 +1,4 @@
-[![Deploy to Azure](https://aka.ms/deploytoazurebutton)](https%3A%2F%2Fraw.githubusercontent.com%2Faghodsi%2FAzure-Sentinel%2Frefs%2Fheads%2Ffeature%2Fwatchlist_auto_update%2FTools%2FWatchlistAutoUpdateFromNetworkRestrictedBlob%2Fazuredeploy.bicep)
-#https%3A%2F%2Fraw.githubusercontent.com%2FAzure%2FAzure-Sentinel%2Frefs%2Fheads%2Fmaster%2FTools%2FWatchlistAutoUpdateFromNetworkRestrictedBlob%2Fazuredeploy.bicep
+[![Deploy to Azure](https://aka.ms/deploytoazurebutton)](https://portal.azure.com/#create/Microsoft.Template/uri/https%3A%2F%2Fraw.githubusercontent.com%2Faghodsi%2FAzure-Sentinel%2Frefs%2Fheads%2Ffeature%2Fwatchlist_auto_update%2FTools%2FWatchlistAutoUpdateFromNetworkRestrictedBlob%2Fazuredeploy.bicep)
 
 # Watchlist from Storage Azure Function
 
